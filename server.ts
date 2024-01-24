@@ -18,7 +18,6 @@ app.get('/', function (req: any, res: any) {
   res.send('Hello World')
 })
 
-
 app.use(authorizationMiddleware)
 app.use('/api/script', scriptRoute)
 app.use('/api/form', formRoute)
