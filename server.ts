@@ -5,7 +5,6 @@ import scriptRoute from "./API/router/scriptRoute";
 import express from 'express'
 import spiritTypeRoute from "./API/router/spiritTypeRoute";
 import loginRoute from "./API/router/loginRoute";
-import cookieParser from 'cookie-parser';
 import cors from "cors";
 
 require('dotenv').config()
