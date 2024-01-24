@@ -1,13 +1,13 @@
-import { emptyS3Bucket, s3Handler } from "../../functions/aws-s3";
+// import { emptyS3Bucket, s3Handler } from "../../functions/aws-s3";
 import { generateS3Key, imageToBase64 } from "../../functions/helpers";
 import { scrapingBottleImages } from "../../scipt_images/index";
 
-const s3Factory = s3Handler({
-  bucket: process.env.BUCKET_NAME,
-  region: process.env.REGION,
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-});
+// const s3Factory = s3Handler({
+//   bucket: process.env.BUCKET_NAME,
+//   region: process.env.REGION,
+//   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+//   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+// });
 
 export async function getImages(req: any, res: any) {
   try {
@@ -19,7 +19,7 @@ export async function getImages(req: any, res: any) {
 
     const currentPage = imageData.slice(startIndex, endIndex);
     const base64Images = [];
-    const deleteAllImages = await emptyS3Bucket(); //Deletes Bucket before saving new images
+    // const deleteAllImages = await emptyS3Bucket(); //Deletes Bucket before saving new images
 
     // Save to S3 and collect URLs
     const s3Urls = [];
